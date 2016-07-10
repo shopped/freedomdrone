@@ -1,0 +1,32 @@
+.center{
+  text-align: center;
+}
+
+#tile{
+  background-image: url("logowide.png");
+  width:100%;
+  height:64px;
+}
+
+#header{
+  color:white;
+  background-color:lightblue;
+}
+
+#divider{
+  background-color:pink;
+  height:3ex;
+}
+
+#center{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+footer {
+  color: blue;
+  text-align: center;
+  background-color: lightgray;
+}
