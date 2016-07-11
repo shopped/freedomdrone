@@ -8,16 +8,61 @@
     href="static/skeleton.css">
     <link rel="stylesheet" type="text/css"
     href="static/normalize.css">
-    
+    <link rel='stylesheet' type='text/css'
+    href='static/custom.css'>
+    <link rel='stylesheet' type='text/css'
+    href='static/partone.css'>
+    <script src='static/partone.js'></script>
 	</head>
 
-  <body>
-    <img src='static/logo.png' alt = 'Suicide Bomber' caption='Terrorism' >
-    <img src='static/logo.png' alt = 'A Gang Banger' caption='Gang Violence' >
-    <img src='static/logo.png' alt = 'A Mosquito' caption='Zika Virus' >
+	<body> 
+    <header id='header'>
+      <h1 class='center'>Self Defense Drones for a Safer America <h1>
+    </header>
+    
+    <div class='container'>
+      <div class='row' id='top'>
+        <div class='one-half column'>
+          <h1>The world is more dangerous than ever...<h1>
+          <h1 id='red'><strong>THREATS</strong> ARE <strong>EVERYWHERE</strong></h1>
+          <h1 id='onclickone'>Drone Armed!</h1>
+          <button class='button' id='onclickone'>SHOOT TO KILL</button>
+        </div>
+        <div class='one-half column'>
+          <img class='u-max-full-width' src='static/drone.jpg'
+          alt='your drone here'/>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='one-third column' id='one'>
+          <h3 class='center'> Terrorism </h3>
+          <img class='u-max-full-width' src='static/hostage.gif' 
+          alt = 'Terrorist With an AK48' title='Internet Terrorist' >
+        </div>
+        <div class='one-third column' id='two'>
+          <h3 class='center'> Gang Bangers </h3>
+          <img class='u-max-full-width' src='static/gang.jpg' 
+          alt = 'A Violent Gang' title='Protect your daughters' >
+        </div>
+        <div class='one-third column' id='three'>
+          <h3 class='center'> Zika Virus </h3>
+          <img class='u-max-full-width' src='static/zika.jpg' 
+          alt = 'A Mosquito' title='Biological Warfare!' >
+        </div>
+      </div>
+      <div class='row'>
+        <div class='offset-by-three one column'>
+          <a href="#top" onclick='next()' id='disable' class='button button-primary'>
+          What can I do to protect my sweet innocent children?</a>
+        </div>
+      </div>
+    </div>
 
-    <a href="parttwo.html" class='button button-primary'>
-    What can I do to protect my sweet innocent children?</a>
-  </body>
+    
+    <footer>
+          <p>Safety Industries is working hard to bring you drone technology </p>
+          <p>&copy; Patrick Carroll 2016 </p>
+    </footer>
+    </body>
   
 </html>
