@@ -23,17 +23,20 @@
     <div class='container'>
       <div class='row' id='top'>
         <div class='one-half column'>
-          <h1>The world is more dangerous than ever...<h1>
+          <h1 id='onclickone2'>The world is more dangerous than ever...<h1>
           <h1 id='red'><strong>THREATS</strong> ARE <strong>EVERYWHERE</strong></h1>
           <h1 id='onclickone'>Drone Armed!</h1>
-          <button class='button' id='onclickone'>SHOOT TO KILL</button>
+          <button class='button' id='onclickone' href='#' onclick='loopShoot()'>
+          SHOOT TO KILL</button>
         </div>
         <div class='one-half column'>
-          <img class='u-max-full-width' src='static/img/drone.jpg'
+          <img class='u-max-full-width' src='static/img/drone.jpg' id='drone'
           alt='your drone here'/>
+          <img class='u-max-full-width' id='flash' alt='bullet flash'
+          src='static/img/flash.png'>
         </div>
       </div>
-      <div class='row'>
+      <div class='row' id='bottom'>
         <div class='one-third column' id='one'>
           <h3 class='center'> Terrorism </h3>
           <img class='u-max-full-width' src='static/img/hostage.gif' 
@@ -51,14 +54,13 @@
         </div>
       </div>
       <div class='row'>
-        <div class='offset-by-three one column'>
           <a href="#top" onclick='next()' id='disable' class='button button-primary'>
           What can I do to protect my sweet innocent children?</a>
-        </div>
+          <a href="parttwo.html" id='nextbtn' class='button'>
+          More Information</a>
       </div>
     </div>
 
-    
     <footer>
           <p>Safety Industries is working hard to bring you drone technology </p>
           <p>&copy; Patrick Carroll 2016 </p>

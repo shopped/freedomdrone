@@ -14,6 +14,59 @@
   to { opacity:1; }
 }
 
+@-webkit-keyframes redToBlack {
+  from { color:red; }
+  to { color:black; }
+}
+@-moz-keyframes redToBlack {
+  from { color:red; }
+  to { color:black; }
+}
+@keyframes redToBlack {
+  from { color:red; }
+  to { color:black; }
+}
+
+@-webkit-keyframes blackToRed {
+  from { color:black; }
+  to { color:red; }
+}
+@-moz-keyframes blackToRed {
+  from { color:black; }
+  to { color:red; }
+}
+@ keyframes blackToRed {
+  from { color:black; }
+  to { color:red; }
+}
+
+#redToBlack {
+  -webkit-animation:redToBlack ease-in 1;
+  -moz-animation:redToBlack ease-in 1;
+  animation:redToBlack ease-in 1;
+  
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+#blackToRed {
+  -webkit-animation:blackToRed ease-in 1;
+  -moz-animation:blackToRed ease-in 1;
+  animation:blackToRed ease-in 1;
+  
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
 .fade-in, #one, #two, #three, #onclickone {
   opacity:0;
   opacity:1 \9;
@@ -52,4 +105,11 @@
   -webkit-animation-delay:120s;
   -moz-animation-delay:120s;
   animation-delay:120s;
+  pointer-events: none;
+}
+#flash {
+  opacity:0;
+  z-index:2;
+  position: absolute;
+  top:20px;
 }
