@@ -1,4 +1,4 @@
-function next(){
+function firstClick(){
   document.getElementById('onclickone2').id = 'redToBlack';
   document.getElementById('red').id = 'redToBlack';
   document.getElementById('onclickone').id = 'blackToRed';
@@ -25,6 +25,5 @@ function shoot(){
   } else {
     f.style.opacity = 0;
   }
-  
   
 }

@@ -40,6 +40,19 @@
   to { color:red; }
 }
 
+@-webkit-keyframes bloodyBackground {
+  from { background-color:white; }
+  to { background-color:red; }
+}
+@-moz-keyframes bloodyBackground {
+  from { background-color:white; }
+  to { background-color:red; }
+}
+@ keyframes bloodyBackground {
+  from { background-color:white; }
+  to { background-color:red; }
+}
+
 #redToBlack {
   -webkit-animation:redToBlack ease-in 1;
   -moz-animation:redToBlack ease-in 1;
@@ -88,13 +101,11 @@
   -moz-animation-delay:0.1s;
   animation-delay:0.1s;
 }
-
 #two {
   -webkit-animation-delay:2.1s;
   -moz-animation-delay:2.1s;
   animation-delay:2.1s;
 }
-
 #three {
   -webkit-animation-delay:5.1s;
   -moz-animation-delay:5.1s;
@@ -108,8 +119,30 @@
   pointer-events: none;
 }
 #flash {
-  opacity:0;
-  z-index:2;
   position: absolute;
-  top:20px;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    border: 3px solid #73AD21;
+  
+  
+}
+
+#bottom{
+  -webkit-animation:bloodyBackground ease-in 1;
+  -moz-animation:bloodyBackground ease-in 1;
+  animation:bloodyBackground ease-in 1;
+  
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  
+  -webkit-animation-duration:8s;
+  -moz-animation-duration:8s;
+  animation-duration:8s;
+  
+  -webkit-animation-delay:0.1s;
+  -moz-animation-delay:0.1s;
+  animation-delay:0.1s;
 }
