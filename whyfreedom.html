@@ -24,11 +24,11 @@
     
       <div class='row' id='top'>
       
-        <div class='one-half column'>
-          <h1 id='onclickone2'>The world is more dangerous than ever...<h1>
-          <h1 id='red'><strong>THREATS</strong> ARE <strong>EVERYWHERE</strong></h1>
-          <h1 id='onclickone'>Drone Armed!</h1>
-          <button class='button' id='onclickone' href='#' onclick='loopShoot()'>
+        <div class='one-half column' id='topleft'>
+          <h1 class='text1' id='onclickone2'>The world is more dangerous than ever...<h1>
+          <h1 class='text2' id='red'><strong>THREATS</strong> ARE <strong>EVERYWHERE</strong></h1>
+          <h1 class='text3' id='onclickone'>Drone Armed!</h1>
+          <button class='button shoot' id='onclickone' href='#' onclick='loopShoot()'>
           SHOOT TO KILL</button>
         </div>
         
@@ -68,9 +68,9 @@
       
       <br>
       <div class='row'>
-          <a href="#top" onclick='firstClick()' id='disable' class='button button-primary'>
+          <a href="#top" onclick='updateReadyButton()' id='readybtn' class='button button-primary'>
           What can I do to protect my sweet innocent children?</a>
-          <a href="parttwo.html" id='nextbtn' class='button'>
+          <a href="#top" onclick='updateNextButton()' id='nextbtn' class='button'>
           More Information</a>
       </div>
       
