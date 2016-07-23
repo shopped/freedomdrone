@@ -12,7 +12,7 @@
     href='static/css/custom.css'>
     <link rel='stylesheet' type='text/css'
     href='static/css/whyfreedom.css'>
-    <script src='static/whyfreedom.js'></script>
+    <script src='static/js/whyfreedom.js'></script>
 	</head>
 
 	<body> 
@@ -25,16 +25,19 @@
       <div class='row' id='top'>
       
         <div class='one-half column' id='topleft'>
-          <h1 class='text1' id='onclickone2'>The world is more dangerous than ever...<h1>
-          <h1 class='text2' id='red'><strong>THREATS</strong> ARE <strong>EVERYWHERE</strong></h1>
-          <h1 class='text3' id='onclickone'>Drone Armed!</h1>
-          <button class='button shoot' id='onclickone' href='#' onclick='loopShoot()'>
-          SHOOT TO KILL</button>
+          <h1 class='text1' id='onclickone2'>
+            The world is more dangerous than ever...</h1>
+          <h1 class='text2' id='red'>
+            <strong>THREATS</strong> ARE <strong>EVERYWHERE</strong></h1>
+          <h1 class='text3' id='onclickone'>
+            Drone Armed!</h1>
+          <button class='button shoot' id='onclickone' href='#' 
+            onclick='ShootButton()'>SHOOT TO KILL</button>
         </div>
         
         <div class='one-half column' id='dronediv'>
             <img id='flash' alt='bullet flash'
-            src='static/img/flash.png'/>
+              src='static/img/flash.png'/>
             <figure>
               <img class='u-full-width' src='static/img/drone.jpg' id='drone'
               alt='your drone here'/>
@@ -44,7 +47,7 @@
         
       </div>
       
-      <div class='row' id='bottom'>
+      <div class='row bottom' id='bottom'>
       
         <div class='one-third column' id='one'>
           <h3 class='center'><strong>Terrorism</strong></h3>
@@ -53,7 +56,7 @@
         </div>
         
         <div class='one-third column' id='two'>
-          <h3 class='center'><strong>Gang Bangers</strong></h3>
+          <h3 class='center'><strong>Gangsters</strong></h3>
           <img class='u-max-full-width' src='static/img/gang.png' 
           alt = 'A Violent Gang' title='They recruit through music' >
         </div>
@@ -68,10 +71,10 @@
       
       <br>
       <div class='row'>
-          <a href="#top" onclick='updateReadyButton()' id='readybtn' class='button button-primary'>
-          What can I do to protect my sweet innocent children?</a>
-          <a href="#top" onclick='updateNextButton()' id='nextbtn' class='button'>
-          More Information</a>
+          <a href="#top"  id='readybtn' class='button button-primary ready'
+          onclick='ReadyButton()'>What can I do to protect my sweet innocent children?</a>
+          <a href="#top" id='nextbtn' class='button next'
+          onclick='NextButton()' >More Information (Next)</a>
       </div>
       
     </div>

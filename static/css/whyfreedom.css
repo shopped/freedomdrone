@@ -1,6 +1,12 @@
 #col1, #col2, #col3{
 }
 
+#paused{
+    -webkit-animation-play-state:paused;
+    -moz-animation-play-state:paused;
+    animation-play-state:paused;
+}
+
 @-webkit-keyframes fadeIn {
   from { opacity:0; }
   to { opacity:1; }
@@ -38,6 +44,19 @@
 @ keyframes blackToRed {
   from { color:black; }
   to { color:red; }
+}
+
+@-webkit-keyframes blackToLime {
+  from { color:black; opacity:0; background-color:black; }
+  to { color:white; opacity:1; background-color:lime; }
+}
+@-moz-keyframes blackToLime {
+  from { color:black; opacity:0; background-color:black; }
+  to { color:white; opacity:1; background-color:lime; }
+}
+@ keyframes blackToLime {
+  from { color:black; opacity:0; background-color:black; }
+  to { color:white; opacity:1; background-color:lime; }
 }
 
 @-webkit-keyframes bloodyBackground {
@@ -95,7 +114,23 @@
   -moz-animation-duration:1s;
   animation-duration:1s;
 }
-
+#visible{
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+  
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+  
+  -webkit-animation-delay:0.1s;
+  -moz-animation-delay:0.1s;
+  animation-delay:0.1s;
+}
 #one {
   -webkit-animation-delay:0.1s;
   -moz-animation-delay:0.1s;
@@ -152,4 +187,17 @@
   -webkit-animation-delay:0.1s;
   -moz-animation-delay:0.1s;
   animation-delay:0.1s;
+}
+#blackToLime{
+  -webkit-animation:blackToLime ease-in 1;
+  -moz-animation:blackToLime ease-in 1;
+  animation:blackToLime ease-in 1;
+  
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  
+  -webkit-animation-duration:2s;
+  -moz-animation-duration:2s;
+  animation-duration:2s;
 }
