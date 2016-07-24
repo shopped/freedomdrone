@@ -20,12 +20,18 @@ function ReadyButton(){
       SHOOTBUTTON = PROTECTCHILDREN;
       break;
     case NIGHTVISION:
-      document.getElementsByClassName('bottom')[0].id = 'blackToLime';
-      document.getElementsByClassName('shoot')[0].id = 'blackToLime';
+      nightVision();
       SHOOTBUTTON = NIGHTVISION;
       READYBUTTON = DISABLED;
       break;
     case AUTOAIM:
+      addTracker();
+      document.getElementsByClassName('text3')[0].id = 'blackToRed';
+      document.getElementsByClassName('text3')[0].style.opacity = '1';
+      document.getElementsByClassName('text3')[0].innerHTML = 'Auto Aim Active';
+      document.getElementsByClassName('shoot')[0].style.opacity = '1';
+      document.getElementsByClassName('shoot')[0].id = 'blackToRed';
+      SHOOTBUTTON = AUTOAIM;
       READYBUTTON = DISABLED;
       break;
     case NOCONSCIENCE:
@@ -49,7 +55,9 @@ function ShootButton(){
       break;
     case NIGHTVISION:
       intervalReference.push(setInterval(shoot,150));
-      document.getElementsByClassName('shoot')[0].style.backgroundColor = 'darkgray';
+      document.getElementsByClassName('shoot')[0].style.backgroundColor = 'transparent';
+      document.getElementsByClassName('shoot')[0].id = 'unvisible';
+      document.getElementsByClassName('next')[0].id = 'blackToRed';
       NEXTBUTTON = AUTOAIM;
       SHOOTBUTTON = DISABLED;
       break;
@@ -75,6 +83,8 @@ function NextButton(){
       undoBullets();
       lightsOut();
       document.getElementsByClassName('ready')[0].innerHTML = 'Activate Night Vision';
+      document.getElementsByClassName('next')[0].id = 'redToBlack';
+      document.getElementsByClassName('shoot')[0].id = 'transparent';
       clearBottom();
       callCriminals();
       NEXTBUTTON = DISABLED;
@@ -82,6 +92,11 @@ function NextButton(){
       break;
     case AUTOAIM:
       undoBullets();
+      clearBottom();
+      lightsOn();
+      makeMosquito();
+      document.getElementsByClassName('ready')[0].innerHTML = 'Activate AutoAim';
+      document.getElementsByClassName('next')[0].id = 'redToBlack';
       READYBUTTON = AUTOAIM;
       NEXTBUTTON = DISABLED;
       break;
@@ -130,7 +145,6 @@ function lightsOut(){
   text2.style.color = "white";
   text2.innerHTML = "<strong>Can't see the bad guys?</strong>";
   var text3 = document.getElementsByClassName('text3')[0];
-  //text3.id = '';
   text3.style.opacity = '0';
   var btn = document.getElementsByClassName('button shoot')[0];
   btn.style.opacity = '0';
@@ -141,28 +155,29 @@ function clearBottom(){
   container.style.backgroundColor = 'transparent';
   container.innerHTML = '';
 }
-var baddie;
-var baddie2;
 function callCriminals(){
   container = document.getElementsByClassName('bottom')[0];
-    baddie = document.createElement('img'); 
-    baddie2 = document.createElement('img');
-    baddie.src = 'static/img/hostage.gif'; 
-    baddie2.src = 'static/img/hostage.gif';
-    baddie.style.opacity = '0';
-    container.appendChild(baddie); 
-    container.appendChild(baddie2);
+  var baddie = document.createElement('img'); 
+  var baddie2 = document.createElement('img');
+  baddie.src = 'static/img/hostage.gif'; 
+  baddie2.src = 'static/img/hostage.gif';
+  baddie.className = "baddie";
+  baddie2.className = "baddie u-pull-right";
+  baddie.style.opacity = '.1';
+  baddie2.style.opacity = '.1';
+  container.appendChild(baddie); 
+  container.appendChild(baddie2);
 }
 
 function nightVision(){
-  var container = document.getElementsByClassName('container')[0];
   var text3 = document.getElementsByClassName('text3')[0];
+  text3.style.color = 'red';
+  text3.id = 'visible';
+  var container = document.getElementsByClassName('bottom')[0];
   container.id = 'blackToLime';
-  text3.style.opacity = '1';
-  text3.id = 'blackToLime';
   document.getElementsByClassName('shoot')[0].id = 'blackToLime';
-  baddie.id = 'visible';
-  baddie2.id = 'visible';
+  for (var i=0; i<2; i++)
+    document.getElementsByClassName('baddie')[i].id='visible';
 }
 //AUTOAIM
 function lightsOn(){
@@ -180,47 +195,77 @@ function lightsOn(){
   text3.style.opacity = '0';
   var btn = document.getElementsByClassName('button shoot')[0];
   btn.style.opacity = '0';
-  var bottom = document.getElementByClassName('botton')[0];
+  var bottom = document.getElementsByClassName('bottom')[0];
   bottom.id='';
   bottom.style.backGroundColor='transparent';
 }
+var m;
 function makeMosquito(){
-  var container = document.getElementByClassName('botton')[0];
-  var m = document.createElement('img');
+  m = document.createElement('img');
   m.src='static/img/zika.png';
   m.id = 'm';
+  m.style.position = 'fixed';
+  console.log(window.innerWidth/2);
+  m.style.left = parseInt(window.innerWidth/2)+'px';
+  m.style.top = parseInt(window.innerHeight/2)+'px';
   m.style.width='10%';
   m.style.height='10%';
-  container.appendChild(m);
+  document.body.appendChild(m);
   randomFlight();
 }
 var flyX=0;
 var flyY=0;
 function randomFlight(){
-  var container = document.getElementsByClassName('container')[0];
-  flyX = parseInt(Math.random()*container.offsetWidth);
-  flyY = parseInt(Math.random()*container.offsetHeight);
+  flyX = parseInt(Math.random()*window.innerWidth);
+  flyY = parseInt(Math.random()*window.innerHeight);
   recursiveFlight();
 }
+var rotator = 0;
 function recursiveFlight(){
-  x = document.getElementById('m').x;
-  y = document.getElementById('m').y;
-  if (flyX == x) {
-    flyX = parseInt(Math.random()*document.getElementsByClassName('container')[0].offsetWidth)
-  } else if (flyX < x) {
-    x++;
+  //console.log(Math.abs(flyX-m.x));
+  if (Math.abs(flyX-m.x)<=2) {
+    flyX = parseInt(Math.random()*window.innerWidth);
+  } else if (flyX < m.x) {
+    m.style.left = parseInt(m.x-1)+'px';
   } else {
-    x--;
+    m.style.left = parseInt(m.x+1)+'px';
   }
-  if (flyY == y) {
-    flyY = parseInt(Math.random()*document.getElementsByClassName('container')[0].offsetHeight)
-  } else if (flyY < y) {
-    y++;
+  if (Math.abs(flyY-m.y)<=2) {
+    flyY = parseInt(Math.random()*window.innerHeight);
+  } else if (flyY < m.y) {
+    m.style.top = parseInt(m.y-1)+'px';
   } else {
-    y--;
+    m.style.top = parseInt(m.y+1)+'px';
   }
-  setTimeout(recursiveFlight, 100);
+  
+  setTimeout(recursiveFlight, 5);
 }
+var tracker; var c; var ctx;
+function addTracker(){
+  c = document.createElement('canvas');
+  c.style.position = 'fixed';
+  c.id = 'myCanvas';
+  c.width=window.innerWidth;
+  c.height=window.innerHeight;
+  //tracker = setInterval(drawTracker,1000);
+  
+  ctx = c.getContext("2d");
+  ctx.beginPath();
+  ctx.moveTo(100, 100);
+  ctx.lineTo(500, 500);
+  ctx.stroke();
+  
+  document.body.appendChild(c);
+}
+function drawTracker(){
+  console.log('tick');
+  ctx = c.getContext("2d");
+  ctx.beginPath();
+  ctx.moveTo(document.getElementById('flash').x, document.getElementById('flash').y);
+  ctx.lineTo(document.getElementById('m').x, document.getElementById('m').y);
+  ctx.stroke();
+}
+
 function death(){
   
 }

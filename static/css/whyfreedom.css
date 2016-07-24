@@ -131,6 +131,23 @@
   -moz-animation-delay:0.1s;
   animation-delay:0.1s;
 }
+#unvisible {
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+  
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+  
+  -webkit-animation-direction:reverse;
+  -moz-animation-direction:reverse;
+  animation-direction:reverse;
+}
 #one {
   -webkit-animation-delay:0.1s;
   -moz-animation-delay:0.1s;
