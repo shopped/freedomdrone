@@ -186,11 +186,11 @@ function lightsOn(){
   var text1 = document.getElementsByClassName('text1')[0];
   text1.id = 'one';
   text1.style.color = 'black';
-  text1.innerHTML = 'Freedom Drones do Eco-Friendly pest control'
+  text1.innerHTML = '<strong>Freedom Drones do Eco-Friendly pest control</strong>'
   var text2 = document.getElementsByClassName('text2')[0];
   text2.id = 'two';
   text2.style.color = "black";
-  text2.innerHTML = "<strong>Why use <em>chemicals</em> or <em>cancer-causing plastic flyswatters</em>? Go green and be free!</strong>";
+  text2.innerHTML = "Why use <em>chemicals</em> or <em>cancer-causing plastic flyswatters</em>? Use FREEDOM!";
   var text3 = document.getElementsByClassName('text3')[0];
   text3.id = '';
   text3.style.opacity = '0';
@@ -227,17 +227,21 @@ function recursiveFlight(){
     return;
   if (Math.abs(flyX-m.x)<=2) {
     flyX = parseInt(Math.random()*window.innerWidth);
-  } else if (flyX < m.x) {
-    m.style.left = (parseInt(m.x)-parseInt(1))+'px';
+  } else if (m.x > flyX) {
+    m.style.left = (m.x-1)+'px';
   } else {
-    m.style.left = (parseInt(m.x)+parseInt(1))+'px';
+    m.style.left = (m.x-(-1))+'px';
   }
   if (Math.abs(flyY-m.y)<=2) {
     flyY = parseInt(Math.random()*window.innerHeight);
-  } else if (flyY < m.y) {
-    m.style.top = (parseInt(m.y)-parseInt(1))+'px';
+    console.log(flyY);
+  } else if (m.y > flyY) {
+    m.style.top = (m.y-1)+'px';
   } else {
-    m.style.top = parseInt(parseFloat(m.y)+parseFloat(1))+'px';
+    m.style.top = (m.y-(-1))+'px'; 
+    //This code is breaking for some reason, 
+    //when the screen width is below an amount. Don't know why.
+    //what a bummer. this can't work on mobile.
   }
   setTimeout(recursiveFlight, 5);
 }

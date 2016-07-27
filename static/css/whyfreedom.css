@@ -60,15 +60,15 @@
 }
 
 @-webkit-keyframes bloodyBackground {
-  from { background-color:white; }
+  from { background-color:lightgray; }
   to { background-color:red; }
 }
 @-moz-keyframes bloodyBackground {
-  from { background-color:white; }
+  from { background-color:lightgray; }
   to { background-color:red; }
 }
 @ keyframes bloodyBackground {
-  from { background-color:white; }
+  from { background-color:lightgray; }
   to { background-color:red; }
 }
 

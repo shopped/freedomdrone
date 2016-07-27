@@ -11,13 +11,21 @@ figcaption{
   text-align:center;
 }
 
+a {
+  color:white;
+}
+
 #header{
   text-align: center;
   font-size:large;
   color:white;
-  background-color: rgba(50, 50, 250, .9);
+  background-color: darkblue;
   padding-top: 1ex;
   padding-bottom: 1ex;
+}
+
+body {
+  background-color:lightgrey;
 }
 
 .footer {
@@ -25,7 +33,7 @@ figcaption{
   text-align: center;
   font-weight: bold;
   color:white;
-  background-color: rgba(50, 50, 250, .9);
+  background-color: darkblue;
   width:100%;
 }
 
