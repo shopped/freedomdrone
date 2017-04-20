@@ -1,0 +1,220 @@
+#col1, #col2, #col3{
+}
+
+#paused{
+    -webkit-animation-play-state:paused;
+    -moz-animation-play-state:paused;
+    animation-play-state:paused;
+}
+
+@-webkit-keyframes fadeIn {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+@-moz-keyframes fadeIn {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+@keyframes fadeIn {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@-webkit-keyframes redToBlack {
+  from { color:red; }
+  to { color:black; }
+}
+@-moz-keyframes redToBlack {
+  from { color:red; }
+  to { color:black; }
+}
+@keyframes redToBlack {
+  from { color:red; }
+  to { color:black; }
+}
+
+@-webkit-keyframes blackToRed {
+  from { color:black; }
+  to { color:red; }
+}
+@-moz-keyframes blackToRed {
+  from { color:black; }
+  to { color:red; }
+}
+@ keyframes blackToRed {
+  from { color:black; }
+  to { color:red; }
+}
+
+@-webkit-keyframes blackToLime {
+  from { color:black; opacity:0; background-color:black; }
+  to { color:white; opacity:1; background-color:lime; }
+}
+@-moz-keyframes blackToLime {
+  from { color:black; opacity:0; background-color:black; }
+  to { color:white; opacity:1; background-color:lime; }
+}
+@ keyframes blackToLime {
+  from { color:black; opacity:0; background-color:black; }
+  to { color:white; opacity:1; background-color:lime; }
+}
+
+@-webkit-keyframes bloodyBackground {
+  from { background-color:lightgray; }
+  to { background-color:red; }
+}
+@-moz-keyframes bloodyBackground {
+  from { background-color:lightgray; }
+  to { background-color:red; }
+}
+@ keyframes bloodyBackground {
+  from { background-color:lightgray; }
+  to { background-color:red; }
+}
+
+#redToBlack {
+  -webkit-animation:redToBlack ease-in 1;
+  -moz-animation:redToBlack ease-in 1;
+  animation:redToBlack ease-in 1;
+  
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+#blackToRed {
+  -webkit-animation:blackToRed ease-in 1;
+  -moz-animation:blackToRed ease-in 1;
+  animation:blackToRed ease-in 1;
+  
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fade-in, #one, #two, #three, #onclickone {
+  opacity:0;
+  opacity:1 \9;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+  
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+#visible{
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+  
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+  
+  -webkit-animation-delay:0.1s;
+  -moz-animation-delay:0.1s;
+  animation-delay:0.1s;
+}
+#unvisible {
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+  
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+  
+  -webkit-animation-direction:reverse;
+  -moz-animation-direction:reverse;
+  animation-direction:reverse;
+}
+#one {
+  -webkit-animation-delay:0.1s;
+  -moz-animation-delay:0.1s;
+  animation-delay:0.1s;
+}
+#two {
+  -webkit-animation-delay:2.1s;
+  -moz-animation-delay:2.1s;
+  animation-delay:2.1s;
+}
+#three {
+  -webkit-animation-delay:5.1s;
+  -moz-animation-delay:5.1s;
+  animation-delay:5.1s;
+}
+
+#onclickone {
+  -webkit-animation-delay:120s;
+  -moz-animation-delay:120s;
+  animation-delay:120s;
+  pointer-events: none;
+}
+#dronediv {
+  position:relative;
+  max-width: 960px;
+}
+#flash {
+  position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    opacity:0;
+}
+#bullet {
+  position: absolute;
+  width:50px;
+  height:50px;
+}
+
+#bottom{
+  -webkit-animation:bloodyBackground ease-in 1;
+  -moz-animation:bloodyBackground ease-in 1;
+  animation:bloodyBackground ease-in 1;
+  
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  
+  -webkit-animation-duration:8s;
+  -moz-animation-duration:8s;
+  animation-duration:8s;
+  
+  -webkit-animation-delay:0.1s;
+  -moz-animation-delay:0.1s;
+  animation-delay:0.1s;
+}
+#blackToLime{
+  -webkit-animation:blackToLime ease-in 1;
+  -moz-animation:blackToLime ease-in 1;
+  animation:blackToLime ease-in 1;
+  
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  
+  -webkit-animation-duration:2s;
+  -moz-animation-duration:2s;
+  animation-duration:2s;
+}
